@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/root_title">
+    <Preference
+        android:key="basic_preference"
+        android:title="@string/pref_title"
+        android:summary="@string/pref_summary" />
+    <PreferenceCategory
+        android:title="@string/pref_unit_cat_title">
+        <CheckBoxPreference
+            android:key="@string/pref_units_key"
+            android:summary="@string/pref_units_summary"
+            android:title="@string/pref_units_title"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/pref_cal_cat_title">
+        <EditTextPreference
+            android:key="@string/pref_vdrop_key"
+            android:title="@string/pref_vdrop_title"
+            android:summary="@string/pref_vdrop_summary"
+            android:dialogTitle="Edit Max Voltage Drop" />
+        <EditTextPreference
+            android:key="@string/pref_pf_key"
+            android:title="@string/pref_pf_title"
+            android:summary="@string/pref_pf_summary"
+            android:dialogTitle="Edit UPS Power Factor"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Report Duration">
+        <EditTextPreference
+            android:key="@string/pref_duration_key"
+            android:title="@string/pref_duration_title"
+            android:summary="@string/pref_duration_summary"/>
+    </PreferenceCategory>
+</PreferenceScreen>

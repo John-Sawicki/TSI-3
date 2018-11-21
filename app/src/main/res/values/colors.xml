@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="circle_1_DarkBlue">#1A237E</color>
+    <color name="circle_15_Blue">#1565C0</color>
+    <color name="circle_2_LightBlue">#64B5F6</color>
+    <color name="circle_25_Teal">#4DB6AC</color>
+    <color name="circle_3_Green">#81C784</color>
+    <color name="circle_35_LightGreen">#9CCC65</color>
+    <color name="circle_4_Lime">#CDDC39</color>
+    <color name="circle_45_LightYellow">#FFEB3B</color>
+    <color name="circle_5_Yellow">#FDD835</color>
+    <color name="circle_55_DarkYellow">#FBC02D</color>
+    <color name="circle_6_LightOrange">#FFA726</color>
+    <color name="circle_7_Orange">#FB8C00</color>
+    <color name="circle_75_DarkOrange">#EF6C00</color>
+    <color name="circle_8_Red">#D32F2F</color>
+    <color name="circle_9_DarkRed">#B71C1C</color>
+    <color name="us_ac_text">#000000</color>
+    <color name="us_ac_accent_dark">#2E7D32</color>
+    <color name="us_ac_accent">#4CAF50</color>
+    <color name="eu_ac_text">#01579B</color>
+    <color name="eu_ac_accent_dark">#4E342E</color>
+    <color name="eu_ac_accent">#795548</color>
+</resources>

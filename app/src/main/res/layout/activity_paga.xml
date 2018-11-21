@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PagaActivity"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_main_title"
+        style="@style/ActivityTitle"
+        android:text="Public Address/ General Alarm"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_main_subtitle"
+        style="@style/ActivitySubTitle"
+        android:text="Speaker Sound Coverage"
+        android:layout_gravity="center_horizontal"/>
+    <include
+        layout="@layout/v_paga_circle"
+        android:id="@+id/lo_top_right"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+    <include
+        layout="@layout/v_paga_db"
+        android:id="@+id/lo_bottom_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.google.android.gms.ads.AdView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adViewBanner"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-8686454969066832/2017040207">
+    </com.google.android.gms.ads.AdView>
+</LinearLayout>

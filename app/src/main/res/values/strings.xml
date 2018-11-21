@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">TSI</string>
+    <string name="task_description">Task Description</string>
+    <string name="email_report">Email Report</string>
+    <string-array name="system_array">
+        <item>CCTV</item>
+        <item>Cabinets</item>
+        <item>ETV</item>
+        <item>LAN</item>
+        <item>PAGA</item>
+        <item>Radar</item>
+        <item>Radio</item>
+        <item>SCS</item>
+        <item>UPS</item>
+        <item>Misc.</item>
+    </string-array>
+    <string-array name="voltages">
+        <item>12VDC</item>
+        <item>24VDC</item>
+        <item>-48VDC</item>
+        <item>120VAC</item>
+        <item>220VAC</item>
+    </string-array>
+
+    <string name="appwidget_text">TSI APP</string>
+    <string name="add_widget">Add widget</string>
+    <string name="telecom_system_integration">Telecom System Integration</string>
+    <string name="system_selection">System Selection</string>
+    <string name="task_list">Task List</string>
+    <string name="task_tracker_by_system">Task Tracker by System</string>
+    <string name="system_spinner">System Spinner</string>
+    <string name="email_report_button">Email Report Button</string>
+    <string name="power_cabling">Power Cabling</string>
+    <string name="voltage_drop_calculator">Voltage Drop Calculator</string>
+    <string name="power_load">Power Load</string>
+    <string name="ups_and_pdu_sizing">UPS and PDU Sizing</string>
+    <string name="cabinet_voltage_vac">Cabinet Voltage (VAC)</string>
+    <string name="voltage">Voltage</string>
+    <string name="source_voltage_v">Source Voltage (V)</string>
+    <string name="spinner_source_voltage">Spinner Source Voltage</string>
+    <string name="parent_voltage_v">Parent Voltage (V)</string>
+    <string name="local_voltage_source">Local voltage source</string>
+    <string name="enter_local_voltage_source">Enter Local Voltage Source</string>
+    <string name="amperage_a">Amperage (A)</string>
+    <string name="enter_amperage">Enter Amperage</string>
+    <string name="wattage_w">Power (W)</string>
+    <string name="enter_wattage_of_end_device">Enter Wattage of end device</string>
+    <string name="distance_ft">Distance (ft)</string>
+    <string name="enter_distance_to_end_device">Enter distance to end device</string>
+    <string name="max_percent_drop">Max Percent Drop</string>
+    <string name="enter_max_percent_drop">Enter max percent drop</string>
+
+    <string name="small_wire_image">Small Wire Image</string>
+    <string name="small_gauge_wire">Small Gauge Wire</string>
+    <string name="small_gauge_distance">Small Gauge Distance</string>
+    <string name="medium_size_wire">Medium Size Wire</string>
+    <string name="medium_wire_image">Medium Wire Image</string>
+    <string name="large_size_wire">Large Size Wire</string>
+    <string name="large_wire_image">Large Wire Image</string>
+    <string name="min_wire_gauge">Min. Wire Gauge</string>
+    <string name="max_distance_using_wire_gauge">Max Distance Using Wire Gauge</string>
+    <string name="calculate">Calculate</string>
+    <string name="image_of_speaker_coverage">Image of Speaker Coverage</string>
+    <string name="db">db</string>
+    <string name="distance">Distance</string>
+    <string name="tbd">TBD</string>
+    <string name="speaker_power_w">Speaker Power (W)</string>
+    <string name="speaker_output_in_w">Speaker Output in W</string>
+    <string name="description">Description</string>
+    <string name="qty">Qty.</string>
+    <string name="watts">Watts</string>
+    <string name="total_watts">Total Watts</string>
+    <string name="cabinet_total_w">Cabinet Total (W)</string>
+    <string name="min_pdu_size_80_dereg">Min. PDU Size 80% Dereg.</string>
+    <string name="min_ups_size_0_9pf">Min. UPS Size 0.9PF</string>
+    <string name="breaker_size">Breaker Size</string>
+    <string name="add_task">Add Task</string>
+    <string name="pref_title">TSI Calculations Preferences</string>
+    <string name="pref_summary">Set preferences for system of units and calculation perimeters.</string>
+    <string name="pref_units_summary">Check to show imperial units. When the box is unchecked, metric units are used.</string>
+    <string name="pref_units_title">Imperial Units</string>
+    <string name="pref_units_key">pref_units_key</string>
+    <string name="pref_unit_cat_title">Units Category</string>
+    <string name="pref_cal_cat_title">Calculation Perimeters</string>
+    <string name="pref_vdrop_key">pref_vdrop_key</string>
+    <string name="pref_vdrop_title">Edit Max Voltage Drop</string>
+    <string name="pref_vdrop_summary">Enter the value for the maximum current drop for the wire.</string>
+    <string name="pref_pf_key">pref_pf_key</string>
+    <string name="pref_pf_title">Edit UPS Power Factor</string>
+    <string name="pref_pf_summary">Enter the pf of the UPS that calculator volt-amps based on wattage.</string>
+    <string name="preferences">Preferences</string>
+    <string name="pref_duration_summary">Enter in the number of days worth of tasks that will be included in the task list report.</string>
+    <string name="pref_duration_title">Number of Days in Report</string>
+    <string name="pref_duration_key">pref_duration_key</string>
+    <string name="distance_imperial">Distance (ft)</string>
+    <string name="distance_metric">Distance (m)</string>
+    <string name="power">Power</string>
+    <string name="percent_drop">percent drop</string>
+</resources>
