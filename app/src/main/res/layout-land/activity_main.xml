@@ -40,6 +40,6 @@
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adViewBanner"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        ads:adUnitId="ca-app-pub-8686454969066832/2017040207">
     </com.google.android.gms.ads.AdView>
 </FrameLayout>
