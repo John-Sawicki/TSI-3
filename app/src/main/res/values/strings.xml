@@ -96,4 +96,6 @@
     <string name="distance_metric">Distance (m)</string>
     <string name="power">Power</string>
     <string name="percent_drop">percent drop</string>
+    <string name="public_address_general_alarm">Public Address/ General Alarm</string>
+    <string name="speaker_sound_coverage">Speaker Sound Coverage</string>
 </resources>

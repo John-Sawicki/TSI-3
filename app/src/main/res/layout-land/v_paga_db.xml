@@ -4,6 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_main_title"
+        style="@style/ActivityTitle"
+        android:text="@string/public_address_general_alarm"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_main_subtitle"
+        style="@style/ActivitySubTitle"
+        android:text="@string/speaker_sound_coverage"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -108,20 +120,5 @@
             android:text="@string/tbd"
             android:id="@+id/tv_distance6"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="@string/speaker_power_w"
-            android:id="@+id/tv_speaker_level"/>
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/speaker_output_in_w"
-            android:inputType="number"
-            android:id="@+id/et_speaker_output"/>
-    </LinearLayout>
+
 </LinearLayout>
