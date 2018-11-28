@@ -9,13 +9,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/source_voltage_v"
             android:id="@+id/tv_source_voltage"/>
         <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
             android:contentDescription="@string/spinner_source_voltage"
             android:id="@+id/sp_source_voltage"/>
     </LinearLayout>
@@ -24,70 +24,51 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/parent_voltage_v"
             android:id="@+id/tv_voltage"/>
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/et_voltage"/>
+            style="@style/TwoColumnResults"
+            android:id="@+id/et_voltage"
+            android:inputType="number"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="@string/amperage_a"
-            android:id="@+id/tv_amperage"/>
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/et_amperage"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/wattage_w"
             android:id="@+id/tv_wattage"/>
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/et_wattage"/>
+            style="@style/TwoColumnResults"
+            android:id="@+id/et_wattage"
+            android:inputType="number"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/distance_ft"
             android:id="@+id/tv_distance"/>
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/et_distance"/>
+            style="@style/TwoColumnResults"
+            android:id="@+id/et_distance"
+            android:inputType="number"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/max_percent_drop"
             android:id="@+id/tv_percent_drop"/>
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:id="@+id/et_percent_drop"/>
+            style="@style/TwoColumnResults"
+            android:id="@+id/et_percent_drop"
+            android:inputType="number"/>
     </LinearLayout>
 </LinearLayout>

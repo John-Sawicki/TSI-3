@@ -8,30 +8,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/min_wire_gauge"
             android:id="@+id/tv_wire_gauge_title"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="TBD"
             android:id="@+id/tv_wire_gauge_result"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/max_distance_using_wire_gauge"
             android:id="@+id/tv_wire_distance_title"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="TBD"
             android:id="@+id/tv_wire_distance_result"/>
     </LinearLayout>
@@ -40,5 +38,9 @@
         android:layout_height="wrap_content"
         android:text="@string/calculate"
         android:contentDescription="@string/calculate"
-        android:id="@+id/btn_calculate"/>
+        android:id="@+id/btn_calculate"
+        android:layout_marginTop="32dp"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>
