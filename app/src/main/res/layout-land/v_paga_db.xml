@@ -9,23 +9,26 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_main_title"
         style="@style/ActivityTitle"
-        android:text="@string/public_address_general_alarm"/>
+        android:text="@string/public_address_general_alarm"
+        android:layout_gravity="center_horizontal"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_main_subtitle"
         style="@style/ActivitySubTitle"
-        android:text="@string/speaker_sound_coverage"/>
+        android:text="@string/speaker_sound_coverage"
+        android:layout_gravity="center_horizontal"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
         <TextView
-            android:layout_width="100dp"
+            style="@style/TwoColumnResults"
             android:layout_height="wrap_content"
             android:text="@string/db"/>
         <TextView
-            android:layout_width="wrap_content"
+            style="@style/TwoColumnResults"
             android:layout_height="wrap_content"
             android:text="@string/distance"
             android:id="@+id/tv_distance_uom"/>
@@ -33,90 +36,84 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_db_level1"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_distance1"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_db_level2"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_distance2"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_db_level3"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_distance3"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_db_level4"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_distance4"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_db_level5"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_distance5"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_db_level6"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/tbd"
             android:id="@+id/tv_distance6"/>
     </LinearLayout>
