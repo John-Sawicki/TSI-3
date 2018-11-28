@@ -16,14 +16,16 @@
             android:id="@+id/tv_main_title"
             style="@style/ActivityTitle"
             android:text="@string/power_cabling"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_main_subtitle"
             style="@style/ActivitySubTitle"
             android:text="@string/voltage_drop_calculator"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"/>
         <include
             layout="@layout/v_cable_req"
             android:id="@+id/lo_top_left"

@@ -4,76 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:orientation="horizontal">
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_small_wire"
-                android:text="Small Gauge TBD"
-                android:contentDescription="@string/small_gauge_wire"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:id="@+id/im_small_wire"
-                android:contentDescription="@string/small_wire_image"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_small_distance"
-                android:text="0ft"
-                android:contentDescription="@string/small_gauge_distance"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_medium_wire"
-                android:text="@string/medium_size_wire"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:id="@+id/im_medium_wire"
-                android:contentDescription="@string/medium_wire_image"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_medium_distance"
-                android:text="0ft"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_large_wire"
-                android:text="@string/large_size_wire"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:id="@+id/im_large_wire"
-                android:contentDescription="@string/large_wire_image"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_large_distance"
-                android:text="3ft"/>
-        </LinearLayout>
-    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
