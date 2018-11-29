@@ -319,7 +319,5 @@
                     android:text=""/>
             </LinearLayout>
         </LinearLayout>
-
     </ScrollView>
-
 </LinearLayout>

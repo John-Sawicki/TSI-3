@@ -1,60 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PowerLoadsActivity"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_main_title"
-        style="@style/ActivityTitle"
-        android:text="@string/power_load"
-        android:contentDescription="@string/power_load"
-        android:layout_gravity="center_horizontal"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_main_subtitle"
-        style="@style/ActivitySubTitle"
-        android:text="@string/ups_and_pdu_sizing"
-        android:layout_gravity="center_horizontal"/>
-
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
         <TextView
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cabinet_voltage_vac"
-            android:id="@+id/tv_voltage"/>
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/voltage"
-                    android:id="@+id/et_voltage"/>
-     </LinearLayout>
-    <include
-        layout="@layout/v_power_loads"
-        android:id="@+id/lo_top_left"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <include
-        layout="@layout/v_power_results"
-        android:id="@+id/lo_bottom_right"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            android:id="@+id/tv_main_title"
+            style="@style/ActivityTitle"
+            android:text="@string/power_load"
+            android:contentDescription="@string/power_load"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_main_subtitle"
+            style="@style/ActivitySubTitle"
+            android:text="@string/ups_and_pdu_sizing"
+            android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/TwoColumnResults"
+                android:text="@string/cabinet_voltage_vac"
+                android:id="@+id/tv_voltage"/>
+            <Spinner
+                style="@style/TwoColumnResults"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:contentDescription="@string/spinner_source_voltage"
+                android:id="@+id/sp_source_voltage"/>
+        </LinearLayout>
+        <include
+            layout="@layout/v_power_loads"
+            android:id="@+id/lo_top_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <include
+            layout="@layout/v_power_results"
+            android:id="@+id/lo_bottom_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
     <com.google.android.gms.ads.AdView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adViewBanner"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-8686454969066832/2017040207">
     </com.google.android.gms.ads.AdView>
-</LinearLayout>
+</RelativeLayout>
