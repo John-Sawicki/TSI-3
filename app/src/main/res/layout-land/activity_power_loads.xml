@@ -39,11 +39,12 @@
                     android:layout_height="wrap_content"
                     android:text="@string/cabinet_voltage_vac"
                     android:id="@+id/tv_voltage"/>
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/voltage"
-                    android:id="@+id/et_voltage"/>
+                <Spinner
+                    style="@style/TwoColumnResults"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:contentDescription="@string/spinner_source_voltage"
+                    android:id="@+id/sp_source_voltage"/>
             </LinearLayout>
             <include
                 layout="@layout/v_power_results"

@@ -9,65 +9,58 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/cabinet_total_w"
             android:id="@+id/tv_total_power_title"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="0"
-            android:id="@+id/et_total_power_result"/>
+            android:id="@+id/tv_total_power_result"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/min_pdu_size_80_dereg"
             android:id="@+id/tv_total_pdu_title"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="0"
-            android:id="@+id/et_total_pdu_result"/>
+            android:id="@+id/tv_total_pdu_result"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/min_ups_size_0_9pf"
             android:id="@+id/tv_total_ups_title"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="0"
-            android:id="@+id/et_total_ups_result"/>
+            android:id="@+id/tv_total_ups_result"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/breaker_size"
             android:id="@+id/tv_breaker_title"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="0"
-            android:id="@+id/et_breaker_result"/>
+            android:id="@+id/tv_breaker_result"/>
     </LinearLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/calculate"
         android:id="@+id/btn_calculate"
-        android:padding="8dp"/>
+        android:padding="8dp"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>
