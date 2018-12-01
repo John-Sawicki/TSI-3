@@ -19,7 +19,16 @@
         <item>24VDC</item>
         <item>-48VDC</item>
         <item>120VAC</item>
-        <item>220VAC</item>
+        <item>230VAC</item>
+    </string-array>
+    <string-array name="interferance">
+        <item>Free Space: 2</item>
+        <item>Urban Area: 2.7</item>
+        <item>Urban Area 3.5</item>
+        <item>Suburban Area: 4</item>
+        <item>Suburban Area: 5</item>
+        <item>Industrial Area: 6</item>
+        <item>Industrial Area: 7</item>
     </string-array>
 
     <string name="appwidget_text">TSI APP</string>
@@ -98,4 +107,5 @@
     <string name="percent_drop">percent drop</string>
     <string name="public_address_general_alarm">Public Address/ General Alarm</string>
     <string name="speaker_sound_coverage">Speaker Sound Coverage</string>
+    <string name="obstruction_coefficient">Obstruction Coefficient</string>
 </resources>

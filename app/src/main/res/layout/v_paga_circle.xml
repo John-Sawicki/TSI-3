@@ -10,16 +10,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:text="@string/speaker_power_w"
             android:id="@+id/tv_speaker_level"/>
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TwoColumnResults"
             android:hint="@string/speaker_output_in_w"
             android:inputType="number"
             android:id="@+id/et_speaker_output"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+        <TextView
+            style="@style/TwoColumnResults"
+            android:text="@string/obstruction_coefficient"
+            android:id="@+id/tv_source_voltage"/>
+        <Spinner
+            style="@style/TwoColumnResults"
+            android:contentDescription="@string/spinner_source_voltage"
+            android:id="@+id/sp_source_voltage"/>
     </LinearLayout>
     <Button
         android:layout_width="match_parent"
