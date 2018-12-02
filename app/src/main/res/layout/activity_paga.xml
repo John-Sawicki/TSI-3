@@ -24,6 +24,20 @@
             style="@style/ActivitySubTitle"
             android:text="@string/speaker_sound_coverage"
             android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+            <TextView
+                style="@style/TwoColumnResults"
+                android:text="@string/obstruction_coefficient"
+                android:id="@+id/tv_source_voltage"/>
+            <Spinner
+                style="@style/TwoColumnResults"
+                android:contentDescription="@string/spinner_source_voltage"
+                android:id="@+id/sp_source_voltage"/>
+        </LinearLayout>
         <include
             layout="@layout/v_paga_circle"
             android:id="@+id/lo_top_right"

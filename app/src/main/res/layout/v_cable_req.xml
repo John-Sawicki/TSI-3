@@ -44,8 +44,7 @@
             style="@style/TwoColumnResults"
             android:id="@+id/et_wattage"
             android:inputType="number"
-            android:hint="@string/power"
-            />
+            android:hint="@string/voltage"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

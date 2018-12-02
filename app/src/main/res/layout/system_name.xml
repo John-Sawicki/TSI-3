@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
-    android:layout_width="204dp"
+    android:layout_width="254dp"
     android:orientation="vertical"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp">
@@ -18,12 +18,26 @@
             android:layout_width="2dp"
             android:layout_height="match_parent"
             android:background="@color/us_ac_accent_dark"/>
-        <TextView
-            android:layout_width="200dp"
+        <LinearLayout
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_system_name"
-            style="@style/MainActivityStyle"
-            android:gravity="center"/>
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_system_name"
+                style="@style/MainActivityStyle"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_system_description"
+                android:layout_marginBottom="4dp"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:text="line two"/>
+        </LinearLayout>
+
         <View
             android:layout_width="2dp"
             android:layout_height="match_parent"

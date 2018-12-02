@@ -108,4 +108,12 @@
     <string name="public_address_general_alarm">Public Address/ General Alarm</string>
     <string name="speaker_sound_coverage">Speaker Sound Coverage</string>
     <string name="obstruction_coefficient">Obstruction Coefficient</string>
+    <string name="one_hundred_ten_db">110dB</string>
+    <string name="one_hundred_db">100dB</string>
+    <string name="ninty_db">90dB</string>
+    <string name="eighty_db">80dB</string>
+    <string name="seventy_db">70dB</string>
+    <string name="sixty_db">60dB</string>
+    <string name="fifty_db">50dB</string>
+    <string name="forty_db">40dB</string>
 </resources>

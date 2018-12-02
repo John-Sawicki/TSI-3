@@ -10,12 +10,46 @@
         android:layout_height="0dp"
         android:layout_weight="7"
         android:orientation="horizontal">
-        <include
-            layout="@layout/v_paga_db"
-            android:id="@+id/lo_bottom_left"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_main_title"
+                style="@style/ActivityTitle"
+                android:text="@string/public_address_general_alarm"
+                android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_main_subtitle"
+                style="@style/ActivitySubTitle"
+                android:text="@string/speaker_sound_coverage"
+                android:layout_gravity="center_horizontal"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+                <TextView
+                    style="@style/TwoColumnResults"
+                    android:text="@string/obstruction_coefficient"
+                    android:id="@+id/tv_source_voltage"/>
+                <Spinner
+                    style="@style/TwoColumnResults"
+                    android:contentDescription="@string/spinner_source_voltage"
+                    android:id="@+id/sp_source_voltage"/>
+            </LinearLayout>
+            <include
+                layout="@layout/v_paga_db"
+                android:id="@+id/lo_bottom_left"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
         <include
             layout="@layout/v_paga_circle"
             android:id="@+id/lo_top_right"
