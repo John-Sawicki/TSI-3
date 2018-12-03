@@ -16,21 +16,16 @@
     <PreferenceCategory
         android:title="@string/pref_cal_cat_title">
         <EditTextPreference
-            android:key="@string/pref_vdrop_key"
-            android:title="@string/pref_vdrop_title"
-            android:summary="@string/pref_vdrop_summary"
-            android:dialogTitle="Edit Max Voltage Drop" />
-        <EditTextPreference
             android:key="@string/pref_pf_key"
             android:title="@string/pref_pf_title"
             android:summary="@string/pref_pf_summary"
             android:dialogTitle="Edit UPS Power Factor"/>
     </PreferenceCategory>
     <PreferenceCategory
-        android:title="Report Duration">
+        android:title="@string/email_address">
         <EditTextPreference
-            android:key="@string/pref_duration_key"
-            android:title="@string/pref_duration_title"
-            android:summary="@string/pref_duration_summary"/>
+            android:key="@string/pref_email_key"
+            android:title="@string/pref_email_title"
+            android:summary="@string/pref_email_summary"/>
     </PreferenceCategory>
 </PreferenceScreen>

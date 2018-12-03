@@ -13,6 +13,7 @@
         <item>SCS</item>
         <item>UPS</item>
         <item>Misc.</item>
+        <item>Decorations</item>
     </string-array>
     <string-array name="voltages">
         <item>12VDC</item>
@@ -87,8 +88,11 @@
     <string name="pref_title">TSI Calculations Preferences</string>
     <string name="pref_summary">Set preferences for system of units and calculation perimeters.</string>
     <string name="pref_units_summary">Check to show imperial units. When the box is unchecked, metric units are used.</string>
-    <string name="pref_units_title">Imperial Units</string>
     <string name="pref_units_key">pref_units_key</string>
+    <string name="pref_units_title">Imperial Units</string>
+    <string name="pref_email_key">pref_email_key</string>
+    <string name="pref_email_title">Email Address for Task Tracker</string>
+    <string name="pref_email_summary">Enter the email address for where you want to send the report of completed tasks.</string>
     <string name="pref_unit_cat_title">Units Category</string>
     <string name="pref_cal_cat_title">Calculation Perimeters</string>
     <string name="pref_vdrop_key">pref_vdrop_key</string>
@@ -116,4 +120,5 @@
     <string name="sixty_db">60dB</string>
     <string name="fifty_db">50dB</string>
     <string name="forty_db">40dB</string>
+    <string name="email_address">Email Address</string>
 </resources>

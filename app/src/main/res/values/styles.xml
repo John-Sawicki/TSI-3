@@ -14,6 +14,7 @@
     <style name="ActivityTitle">
         <item name="android:textSize">20sp</item>
         <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">16dp</item>
     </style>
     <style name="ActivitySubTitle">
         <item name="android:textSize">16sp</item>
