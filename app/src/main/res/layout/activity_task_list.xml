@@ -17,19 +17,15 @@
             android:id="@+id/tv_main_title"
             style="@style/ActivityTitle"
             android:text="@string/task_list"
-            android:layout_gravity="center_horizontal"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/tv_main_subtitle"/>
+            android:layout_gravity="center_horizontal"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv_main_subtitle"
             style="@style/ActivitySubTitle"
             android:text="@string/task_tracker_by_system"
-            android:layout_gravity="center_horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/tv_main_title"
-            app:layout_constraintBottom_toTopOf="@+id/tv_task_description"/>
-        <TextView
+            android:layout_gravity="center_horizontal"/>
+       <!-- <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tv_task_description"
@@ -38,18 +34,21 @@
             android:layout_gravity="center_horizontal"
             app:layout_constraintTop_toBottomOf="@+id/tv_main_subtitle"
             app:layout_constraintBottom_toTopOf="@+id/sv_task_entry"/>
+
+            app:layout_constraintTop_toBottomOf="@+id/tv_task_description">
+            -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:id="@+id/sv_task_entry"
-            app:layout_constraintTop_toBottomOf="@+id/tv_task_description">
+            android:id="@+id/sv_task_entry">
             <!--app:layout_constraintBottom_toTopOf="@+id/group_spin_add"  -->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/et_task_entry"
-                android:inputType="textMultiLine"
-                android:imeOptions="actionDone"/>
+
+                android:imeOptions="actionDone"
+                android:hint="@string/et_task_entry_hint"/>
         </ScrollView>
         <!--
         <android.support.constraint.Group
@@ -66,7 +65,7 @@
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="200dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:orientation="vertical"
                 android:layout_marginStart="@dimen/phone_edge_margin">
                 <View
@@ -75,7 +74,12 @@
                     android:background="@color/us_ac_accent_dark"/>
                 <LinearLayout
                     android:layout_width="200dp"
-                    android:layout_height="46dp"
+                    android:layout_height="56dp"
+
+
+
+
+
                     android:orientation="horizontal">
                     <View
                         android:layout_width="2dp"
@@ -83,7 +87,7 @@
                         android:background="@color/us_ac_accent_dark"/>
                     <Spinner
                         android:layout_width="196dp"
-                        android:layout_height="20dp"
+                        android:layout_height="match_parent"
                         android:id="@+id/sp_system_name"
                         android:contentDescription="@string/system_spinner">
                     </Spinner>
@@ -103,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:contentDescription="@string/email_report_button"
+                android:contentDescription="@string/add_task"
                 android:text="@string/add_task"
                 app:layout_constraintTop_toBottomOf="@+id/sv_task_entry"
                 app:layout_constraintBottom_toTopOf="@+id/btn_email_report"
