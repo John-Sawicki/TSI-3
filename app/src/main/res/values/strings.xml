@@ -48,7 +48,7 @@
     <string name="voltage">Voltage</string>
     <string name="source_voltage_v">Source Voltage (V)</string>
     <string name="spinner_source_voltage">Spinner Source Voltage</string>
-    <string name="parent_voltage_v">Parent Voltage (V)</string>
+    <string name="parent_voltage_v">Downstream Voltage (V)</string>
     <string name="local_voltage_source">Local voltage source</string>
     <string name="enter_local_voltage_source">Enter Local Voltage Source</string>
     <string name="amperage_a">Amperage (A)</string>
@@ -122,4 +122,6 @@
     <string name="forty_db">40dB</string>
     <string name="email_address">Email Address</string>
     <string name="et_task_entry_hint">Enter summary of completed task.</string>
+    <string name="speaker_coverage_image">speaker coverage image</string>
+    <string name="tbd">TBD</string>
 </resources>
