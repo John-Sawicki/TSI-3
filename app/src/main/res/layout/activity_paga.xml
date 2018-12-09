@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_main_title"
-            style="@style/ActivityTitlePaga"
+            style="@style/ActivityTitleShort"
             android:text="@string/public_address_general_alarm"
             android:layout_gravity="center_horizontal"/>
         <TextView

@@ -15,7 +15,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:id="@+id/tv_main_title"
-            style="@style/ActivityTitle"
+            style="@style/ActivityTitleShort"
             android:layout_gravity="center_horizontal"
             android:text="@string/power_cabling"/>
         <TextView
