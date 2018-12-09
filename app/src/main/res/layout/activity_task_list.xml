@@ -46,9 +46,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/et_task_entry"
-
                 android:imeOptions="actionDone"
-                android:hint="@string/et_task_entry_hint"/>
+                android:hint="@string/et_task_entry_hint"
+                android:layout_marginStart="@dimen/text_margin"/>
         </ScrollView>
         <!--
         <android.support.constraint.Group
@@ -62,12 +62,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/text_margin">
             <LinearLayout
                 android:layout_width="200dp"
                 android:layout_height="60dp"
-                android:orientation="vertical"
-                android:layout_marginStart="@dimen/phone_edge_margin">
+                android:orientation="vertical">
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
@@ -75,11 +75,6 @@
                 <LinearLayout
                     android:layout_width="200dp"
                     android:layout_height="56dp"
-
-
-
-
-
                     android:orientation="horizontal">
                     <View
                         android:layout_width="2dp"
@@ -106,13 +101,13 @@
                 android:id="@+id/btn_add_task"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
                 android:contentDescription="@string/add_task"
                 android:text="@string/add_task"
                 app:layout_constraintTop_toBottomOf="@+id/sv_task_entry"
                 app:layout_constraintBottom_toTopOf="@+id/btn_email_report"
                 app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginEnd="@dimen/phone_edge_margin"/>
+                android:layout_marginRight="@dimen/phone_edge_margin"/>
         </LinearLayout>
 
         <Button
@@ -120,17 +115,24 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_email_report"
             android:text="@string/email_report"
-            android:contentDescription="@string/email_report_button"/>
+            android:contentDescription="@string/email_report_button"
+            android:layout_marginLeft="@dimen/text_margin"/>
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_completed_tasks"
-            android:layout_above="@+id/adViewBanner"
-            />
+            android:layout_above="@+id/adViewBanner">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_completed_tasks"
+                android:gravity="top"
+                android:layout_marginStart="@dimen/text_margin"/>
+        </ScrollView>
+
         <com.google.android.gms.ads.AdView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
