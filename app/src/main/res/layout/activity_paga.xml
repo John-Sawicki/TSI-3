@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tv_main_title"
-            style="@style/ActivityTitle"
+            style="@style/ActivityTitlePaga"
             android:text="@string/public_address_general_alarm"
             android:layout_gravity="center_horizontal"/>
         <TextView
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="8dp">
             <TextView
                 style="@style/TwoColumnResults"
                 android:text="@string/obstruction_coefficient"
