@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -42,7 +41,7 @@
             layout="@layout/v_paga_circle"
             android:id="@+id/lo_top_right"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="280dp"/>
         <include
             layout="@layout/v_paga_db"
             android:id="@+id/lo_bottom_left"

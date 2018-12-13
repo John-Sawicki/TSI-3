@@ -13,7 +13,6 @@
         <item>SCS</item>
         <item>UPS</item>
         <item>Misc.</item>
-        <item>Decorations</item>
     </string-array>
     <string-array name="voltages">
         <item>12VDC</item>
@@ -22,12 +21,12 @@
         <item>120VAC</item>
         <item>230VAC</item>
     </string-array>
-    <string-array name="interferance">
+    <string-array name="interference">
         <item>Free Space: 2</item>
-        <item>Urban Area: 2.7</item>
-        <item>Urban Area 3.5</item>
-        <item>Suburban Area: 4</item>
-        <item>Suburban Area: 5</item>
+        <item>Suburban Area: 2.7</item>
+        <item>Suburban Area 3.5</item>
+        <item>Urban Area: 4</item>
+        <item>Urban Area: 5</item>
         <item>Industrial Area: 6</item>
         <item>Industrial Area: 7</item>
     </string-array>
@@ -114,7 +113,7 @@
     <string name="obstruction_coefficient">Obstruction Coefficient</string>
     <string name="one_hundred_ten_db">110dB</string>
     <string name="one_hundred_db">100dB</string>
-    <string name="ninty_db">90dB</string>
+    <string name="ninety_db">90dB</string>
     <string name="eighty_db">80dB</string>
     <string name="seventy_db">70dB</string>
     <string name="sixty_db">60dB</string>
@@ -123,4 +122,10 @@
     <string name="email_address">Email Address</string>
     <string name="et_task_entry_hint">Enter summary of completed task.</string>
     <string name="speaker_coverage_image">speaker coverage image</string>
+    <string name="breaker_greater_than_50">Breaker will be larger than 50A.</string>
+    <string name="power_cable_widget">Power Cable min. Size</string>
+    <string name="downstream_voltage_drop_error">The downstream voltage has already dropped below the minimum voltage.</string>
+    <string name="downstream_voltage_error">The downstream voltage value has to be less than or equal to the source voltage.</string>
+    <string name="max_breaker_size_error">Reduce the load on the breaker.</string>
+    <string name="widget_paga">PAGA 60dB Distance</string>
 </resources>
