@@ -45,6 +45,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -59,6 +60,8 @@ import com.google.android.gms.ads.MobileAds;
 import android.Manifest;
 import android.widget.Toast;
 import static android.view.inputmethod.EditorInfo.IME_MASK_ACTION;
+import static java.text.DateFormat.DATE_FIELD;
+import static java.text.DateFormat.getDateTimeInstance;
 
 public class TaskListActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
     @BindView(R.id.et_task_entry) EditText et_task_entry;
@@ -166,15 +169,17 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
                 boolean isConnected = activeNetwork != null &&
                         activeNetwork.isConnectedOrConnecting();
                 if(validEmail){
-                    Toast toast = Toast.makeText(context, "Please enter a valid email address in the preference screen.", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(context, R.string.toast_no_email_address, Toast.LENGTH_LONG);
                     toast.show();
                 }else if(!isConnected){
-                    Toast toast = Toast.makeText(context, "You need a network connection to send the summary email.", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(context, R.string.toast_no_network, Toast.LENGTH_LONG);
                     toast.show();
                 } else{
                     retrieveTasks();
                     SimpleDateFormat format = new SimpleDateFormat("EEE MMM dd");//ex Tuesday May 5, 2018
                     String SummaryDateString = format.format(new Date());
+                    //DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,DATE_FIELD);
+                    //String SummaryDateString = dateFormat.toString();
                     Log.d(ACTIVITY, "email button address "+emailAddress+" date "+SummaryDateString);
                     //appDb.taskDao().loadAllTasks();
                     Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
