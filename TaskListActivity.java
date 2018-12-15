@@ -74,7 +74,7 @@ public class TaskListActivity extends AppCompatActivity implements
     @BindView(R.id.adViewBanner) AdView adViewBanner;
     ArrayAdapter aa_spinner_system;
     private SQLiteDatabase mDb;
-    private boolean imperial = true, asyncDone = false, validEmail, locationUpdated = false;
+    private boolean imperial = true, asyncDone = false, validEmail, locationUpdated = false, gpsPermission = false;
     private String locationString="TBD", systemSummary ="did stuff today", systemName, emailSummary="", emailAddress, urlBase, taskSummary="\n";
     private int systemInt=0;//values reference position in spinner for the system
     private static String ACTIVITY = "TASK_LIST_ACT";
@@ -84,14 +84,23 @@ public class TaskListActivity extends AppCompatActivity implements
     private double[] latLong={0,0};
     List<TaskEntryRm> completedTasks;
     private void updateLocation(){
-
+        if(ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
+            Location onCreateLocation =locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            latLong[0] = onCreateLocation.getLatitude();
+            latLong[1] = onCreateLocation.getLongitude();
+            Log.d(ACTIVITY, "updateLocation latLong "+latLong[0]+" "+latLong[1]);
+        }
+        urlBase= "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ latLong[0]+","+ latLong[1]+"&sensor=true&key="+ApiKey.GoogleApiKey;
+        LocationAsyncTask task = new LocationAsyncTask(TaskListActivity.this);//method b using a separate file
+        task.execute(urlBase);//value updated by the interface
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(savedInstanceState!=null){
-            latLong[0]= savedInstanceState.getDouble("latLong_zero",0.0);
-            latLong[1]= savedInstanceState.getDouble("latLong_one",0.0);
+            //latLong[0]= savedInstanceState.getDouble("latLong_zero",0.0);
+            //latLong[1]= savedInstanceState.getDouble("latLong_one",0.0);
             taskSummary = savedInstanceState.getString("taskSummary","");
             Log.d(ACTIVITY, "savedInstance latLong "+latLong[0]+" "+latLong[1]+" "+taskSummary);
         }
@@ -103,11 +112,11 @@ public class TaskListActivity extends AppCompatActivity implements
         AdRequest adRequest = new AdRequest.Builder().build();
         adViewBanner.loadAd(adRequest);
         emailSummary="";//rest to empty so when the user presses back it doesnt keep adding to the string
-        urlBase= "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ latLong[0]+","+ latLong[1]+"&sensor=true&key="+ApiKey.GoogleApiKey;
-        //new DownloadTask().execute(urlBase);//method a in this file
-        LocationAsyncTask task = new LocationAsyncTask(TaskListActivity.this);//method b using a separate file
-        task.execute(urlBase);//value updated by the interface
         locationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
+        updateLocation();
+        //new DownloadTask().execute(urlBase);//method a in this file
+
+
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
@@ -144,8 +153,7 @@ public class TaskListActivity extends AppCompatActivity implements
             }
         };
         et_task_entry.setImeOptions(IME_MASK_ACTION);
-        if(ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED){
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         }else{//permission granted
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,1*1000, 2, locationListener);
