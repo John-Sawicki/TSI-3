@@ -53,6 +53,7 @@ import com.example.android.tsi.SqliteSum.SumDbHelper;
 import com.example.android.tsi.SqliteSum.SumTaskContract;
 import com.example.android.tsi.Widget.SummaryService;
 import com.example.android.tsi.utilities.ApiKey;
+import com.example.android.tsi.utilities.LocationAsyncTask;
 import com.example.android.tsi.utilities.LocationClass;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -63,7 +64,8 @@ import static android.view.inputmethod.EditorInfo.IME_MASK_ACTION;
 import static java.text.DateFormat.DATE_FIELD;
 import static java.text.DateFormat.getDateTimeInstance;
 
-public class TaskListActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
+public class TaskListActivity extends AppCompatActivity implements
+        SharedPreferences.OnSharedPreferenceChangeListener, LocationAsyncTask.OnAddressComplete {
     @BindView(R.id.et_task_entry) EditText et_task_entry;
     @BindView(R.id.sp_system_name)Spinner sp_system_name;
     @BindView(R.id.tv_completed_tasks) TextView tv_completed_tasks;
@@ -72,7 +74,7 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
     @BindView(R.id.adViewBanner) AdView adViewBanner;
     ArrayAdapter aa_spinner_system;
     private SQLiteDatabase mDb;
-    private boolean imperial = true, asyncDone = false, validEmail;
+    private boolean imperial = true, asyncDone = false, validEmail, locationUpdated = false;
     private String locationString="TBD", systemSummary ="did stuff today", systemName, emailSummary="", emailAddress, urlBase, taskSummary="\n";
     private int systemInt=0;//values reference position in spinner for the system
     private static String ACTIVITY = "TASK_LIST_ACT";
@@ -81,6 +83,9 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
     LocationListener locationListener;
     private double[] latLong={0,0};
     List<TaskEntryRm> completedTasks;
+    private void updateLocation(){
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +103,10 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
         AdRequest adRequest = new AdRequest.Builder().build();
         adViewBanner.loadAd(adRequest);
         emailSummary="";//rest to empty so when the user presses back it doesnt keep adding to the string
-        new DownloadTask().execute(urlBase);
+        urlBase= "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ latLong[0]+","+ latLong[1]+"&sensor=true&key="+ApiKey.GoogleApiKey;
+        //new DownloadTask().execute(urlBase);//method a in this file
+        LocationAsyncTask task = new LocationAsyncTask(TaskListActivity.this);//method b using a separate file
+        task.execute(urlBase);//value updated by the interface
         locationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
         locationListener = new LocationListener() {
             @Override
@@ -107,18 +115,23 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
                 latLong[0] = location.getLatitude();
                 latLong[1] = location.getLongitude();
                 Log.i(ACTIVITY, "onLocationChanged lat and lon "+Double.toString(latLong[0])+" "+Double.toString(latLong[1]));
+
+                LocationAsyncTask task = new LocationAsyncTask(TaskListActivity.this);//method b using a separate file
+                urlBase= "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ latLong[0]+","+ latLong[1]+"&sensor=true&key="+ApiKey.GoogleApiKey;
+                task.execute(urlBase);//value updated by the interface
+                /*
                 try{
                     Log.d(ACTIVITY, "try onLocationChanged latLong "+latLong[0]+" "+latLong[1]);
-                    //LocationClass locationClass = new LocationClass();
                     urlBase= "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ latLong[0]+","+ latLong[1]+"&sensor=true&key="+ApiKey.GoogleApiKey;
-                    new DownloadTask().execute(urlBase);
-                    //locationString = locationClass.getLocation(latLong);//pass in lat and long coordination and return street address
+                   // new DownloadTask().execute(urlBase);
+
                     Log.d(ACTIVITY, "try onLocationChanged latLong "+latLong[0]+" "+latLong[1]+" address "+locationString);
                 }catch (Exception e){
                     e.printStackTrace();
                     locationString = "Unable to determine location.-onClick";
                     Log.d(ACTIVITY, "catch onClick");
                 }
+                */
             }
             @Override
             public void onStatusChanged(String s, int i, Bundle bundle) {
@@ -133,11 +146,9 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
         et_task_entry.setImeOptions(IME_MASK_ACTION);
         if(ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED){
-            //ask for permission
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-
         }else{//permission granted
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,10*1000, 20, locationListener);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,1*1000, 2, locationListener);
         }
         setUpPreferences();
         appDb = AppDatabase.getInstance(getApplicationContext());
@@ -153,7 +164,6 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
         btn_email_report.setOnClickListener(new View.OnClickListener() {
@@ -220,6 +230,7 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
 
                 }cursor.close();
                 SummaryService.startActionUpdateSum(getApplicationContext());
+                /*
                 try{
                     Log.d(ACTIVITY, "try onClick latLong "+latLong[0]+" "+latLong[1]);
                     //LocationClass locationClass = new LocationClass();
@@ -229,6 +240,7 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
                     locationString = "Unable to determine location.-onClick";
                     Log.d(ACTIVITY, "catch onClick");
                 }
+                */
                 Log.d(ACTIVITY, "room values "+dateString+" "+systemName+" "+systemSummary+" "+locationString);
                 final TaskEntryRm taskToAdd  = new TaskEntryRm(dateString,systemName, systemSummary, locationString, 0);
                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
@@ -241,10 +253,22 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
                 retrieveTasks();
                 //tv_completed_tasks.setText(emailSummary);
                 Context context = getApplicationContext();
-                Toast toast = Toast.makeText(context, "Completed task saved.", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(context, R.string.task_saved, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
+    }
+
+    @Override
+    public void onAddressComplete(String address) {
+        locationString = address;
+        Log.d(ACTIVITY, "address update interface "+address+" "+locationString);
+        if(!locationUpdated){//let the user know the first time that they go to the activity that a non-null address has been retrieved from Google
+            locationUpdated = true;
+            Toast toast = Toast.makeText(getApplicationContext(), R.string.task_updated, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+
     }
     public class DownloadTask  extends AsyncTask<String, Void, String> {
         @Override
