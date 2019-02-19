@@ -18,9 +18,12 @@
         android:title="@string/pref_cal_cat_title">
         <EditTextPreference
             android:key="@string/pref_pf_key"
+            android:inputType="numberDecimal"
+            android:digits="0123456789."
             android:title="@string/pref_pf_title"
             android:summary="@string/pref_pf_summary"
-            android:dialogTitle="Edit UPS Power Factor"/>
+            android:dialogTitle="Edit UPS Power Factor"
+            android:defaultValue="0.9"/>
     </PreferenceCategory>
     <PreferenceCategory
         android:title="@string/email_address">

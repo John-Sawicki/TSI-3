@@ -115,12 +115,5 @@
             android:id="@+id/im_circle9"
             android:tint="@color/us_ac_accent"
             android:contentDescription="@string/speaker_coverage_image"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_spk_distance"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="100dp"
-            android:text=""/>
     </FrameLayout>
 </LinearLayout>

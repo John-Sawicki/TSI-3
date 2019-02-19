@@ -73,6 +73,6 @@
             android:contentDescription="@string/enter_max_percent_drop"
             android:id="@+id/et_percent_drop"
             android:inputType="numberDecimal"
-            android:hint="@string/percent_drop"/>
+            android:hint="@string/hint_percent_drop"/>
     </LinearLayout>
 </LinearLayout>

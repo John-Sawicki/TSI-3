@@ -16,7 +16,7 @@
             android:id="@+id/tv_total_power_title"/>
         <TextView
             style="@style/TwoColumnResults"
-            android:text="0"
+            android:text="@string/zero"
             android:id="@+id/tv_total_power_result"/>
     </LinearLayout>
     <LinearLayout
@@ -29,7 +29,7 @@
             android:id="@+id/tv_total_pdu_title"/>
         <TextView
             style="@style/TwoColumnResults"
-            android:text="0"
+            android:text="@string/zero"
             android:id="@+id/tv_total_pdu_result"/>
     </LinearLayout>
     <LinearLayout
@@ -42,7 +42,7 @@
             android:id="@+id/tv_total_ups_title"/>
         <TextView
             style="@style/TwoColumnResults"
-            android:text="0"
+            android:text="@string/zero"
             android:id="@+id/tv_total_ups_result"/>
     </LinearLayout>
     <LinearLayout
@@ -55,7 +55,7 @@
             android:id="@+id/tv_breaker_title"/>
         <TextView
             style="@style/TwoColumnResults"
-            android:text="0"
+            android:text="@string/zero"
             android:id="@+id/tv_breaker_result"/>
     </LinearLayout>
     <Button

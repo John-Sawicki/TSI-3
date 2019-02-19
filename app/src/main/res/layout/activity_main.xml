@@ -25,14 +25,12 @@
             android:text="@string/system_selection"
             android:layout_gravity="center_horizontal"
             android:padding="8dp"/>
-
         <android.support.v7.widget.RecyclerView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/rv_system_name"
             android:layout_gravity="center_horizontal">
         </android.support.v7.widget.RecyclerView>
-
     </LinearLayout>
     <com.google.android.gms.ads.AdView
         android:layout_width="match_parent"

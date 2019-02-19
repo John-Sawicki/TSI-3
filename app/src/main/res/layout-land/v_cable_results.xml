@@ -16,7 +16,7 @@
             android:id="@+id/tv_wire_gauge_title"/>
         <TextView
             style="@style/TwoColumnResults"
-            android:text="TBD"
+            android:text="@string/tbd"
             android:id="@+id/tv_wire_gauge_result"/>
     </LinearLayout>
     <LinearLayout
@@ -30,7 +30,7 @@
             android:id="@+id/tv_wire_distance_title"/>
         <TextView
             style="@style/TwoColumnResults"
-            android:text="TBD"
+            android:text="@string/tbd"
             android:id="@+id/tv_wire_distance_result"/>
     </LinearLayout>
     <Button

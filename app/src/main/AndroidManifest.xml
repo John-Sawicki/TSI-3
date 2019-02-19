@@ -34,7 +34,8 @@
                   android:windowSoftInputMode="adjustResize">
 
         </activity>
-        <activity android:name=".PowerCableActivity">
+        <activity android:name=".PowerCableActivity"
+                  android:windowSoftInputMode="adjustPan">
         </activity>
         <activity android:name=".TaskListActivity">
 

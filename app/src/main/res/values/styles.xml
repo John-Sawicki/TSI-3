@@ -7,10 +7,7 @@
         <item name="colorPrimaryDark">@color/us_ac_accent_dark</item>
         <item name="colorAccent">@color/eu_ac_accent</item>
     </style>
-    <style name="SystemName">
-        <item name="android:padding">8dp</item>
-        <item name="android:textSize">18sp</item>
-    </style>
+
     <style name="ActivityTitle">
         <item name="android:textSize">20sp</item>
         <item name="android:gravity">center_horizontal</item>
@@ -25,11 +22,6 @@
         <item name="android:textSize">16sp</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:textColor">@color/us_ac_accent_dark</item>
-    </style>
-    <style name="SectionTitle">
-        <item name="android:textSize">14sp</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:gravity">center_horizontal</item>
     </style>
     <style name="MainActivityStyle">
         <item name="android:textSize">16sp</item>
