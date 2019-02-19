@@ -45,6 +45,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -52,6 +53,7 @@ import com.example.android.tsi.SqliteSum.SumDbHelper;
 import com.example.android.tsi.SqliteSum.SumTaskContract;
 import com.example.android.tsi.Widget.SummaryService;
 import com.example.android.tsi.utilities.ApiKey;
+import com.example.android.tsi.utilities.LocationAsyncTask;
 import com.example.android.tsi.utilities.LocationClass;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -59,8 +61,11 @@ import com.google.android.gms.ads.MobileAds;
 import android.Manifest;
 import android.widget.Toast;
 import static android.view.inputmethod.EditorInfo.IME_MASK_ACTION;
+import static java.text.DateFormat.DATE_FIELD;
+import static java.text.DateFormat.getDateTimeInstance;
 
-public class TaskListActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
+public class TaskListActivity extends AppCompatActivity implements
+        SharedPreferences.OnSharedPreferenceChangeListener, LocationAsyncTask.OnAddressComplete {
     @BindView(R.id.et_task_entry) EditText et_task_entry;
     @BindView(R.id.sp_system_name)Spinner sp_system_name;
     @BindView(R.id.tv_completed_tasks) TextView tv_completed_tasks;
@@ -69,7 +74,7 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
     @BindView(R.id.adViewBanner) AdView adViewBanner;
     ArrayAdapter aa_spinner_system;
     private SQLiteDatabase mDb;
-    private boolean imperial = true, asyncDone = false, validEmail;
+    private boolean imperial = true, asyncDone = false, validEmail, locationUpdated = false, gpsPermission = false;
     private String locationString="TBD", systemSummary ="did stuff today", systemName, emailSummary="", emailAddress, urlBase, taskSummary="\n";
     private int systemInt=0;//values reference position in spinner for the system
     private static String ACTIVITY = "TASK_LIST_ACT";
@@ -78,12 +83,24 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
     LocationListener locationListener;
     private double[] latLong={0,0};
     List<TaskEntryRm> completedTasks;
+    private void updateLocation(){
+        if(ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
+            Location onCreateLocation =locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            latLong[0] = onCreateLocation.getLatitude();
+            latLong[1] = onCreateLocation.getLongitude();
+            Log.d(ACTIVITY, "updateLocation latLong "+latLong[0]+" "+latLong[1]);
+        }
+        urlBase= "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ latLong[0]+","+ latLong[1]+"&sensor=true&key="+ApiKey.GoogleApiKey;
+        LocationAsyncTask task = new LocationAsyncTask(TaskListActivity.this);//method b using a separate file
+        task.execute(urlBase);//value updated by the interface
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if(savedInstanceState!=null){
-            latLong[0]= savedInstanceState.getDouble("latLong_zero",0.0);
-            latLong[1]= savedInstanceState.getDouble("latLong_one",0.0);
+            //latLong[0]= savedInstanceState.getDouble("latLong_zero",0.0);
+            //latLong[1]= savedInstanceState.getDouble("latLong_one",0.0);
             taskSummary = savedInstanceState.getString("taskSummary","");
             Log.d(ACTIVITY, "savedInstance latLong "+latLong[0]+" "+latLong[1]+" "+taskSummary);
         }
@@ -95,8 +112,11 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
         AdRequest adRequest = new AdRequest.Builder().build();
         adViewBanner.loadAd(adRequest);
         emailSummary="";//rest to empty so when the user presses back it doesnt keep adding to the string
-        new DownloadTask().execute(urlBase);
         locationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
+        updateLocation();
+        //new DownloadTask().execute(urlBase);//method a in this file
+
+
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
@@ -104,18 +124,23 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
                 latLong[0] = location.getLatitude();
                 latLong[1] = location.getLongitude();
                 Log.i(ACTIVITY, "onLocationChanged lat and lon "+Double.toString(latLong[0])+" "+Double.toString(latLong[1]));
+
+                LocationAsyncTask task = new LocationAsyncTask(TaskListActivity.this);//method b using a separate file
+                urlBase= "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ latLong[0]+","+ latLong[1]+"&sensor=true&key="+ApiKey.GoogleApiKey;
+                task.execute(urlBase);//value updated by the interface
+                /*
                 try{
                     Log.d(ACTIVITY, "try onLocationChanged latLong "+latLong[0]+" "+latLong[1]);
-                    //LocationClass locationClass = new LocationClass();
                     urlBase= "https://maps.googleapis.com/maps/api/geocode/json?latlng="+ latLong[0]+","+ latLong[1]+"&sensor=true&key="+ApiKey.GoogleApiKey;
-                    new DownloadTask().execute(urlBase);
-                    //locationString = locationClass.getLocation(latLong);//pass in lat and long coordination and return street address
+                   // new DownloadTask().execute(urlBase);
+
                     Log.d(ACTIVITY, "try onLocationChanged latLong "+latLong[0]+" "+latLong[1]+" address "+locationString);
                 }catch (Exception e){
                     e.printStackTrace();
                     locationString = "Unable to determine location.-onClick";
                     Log.d(ACTIVITY, "catch onClick");
                 }
+                */
             }
             @Override
             public void onStatusChanged(String s, int i, Bundle bundle) {
@@ -128,13 +153,10 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
             }
         };
         et_task_entry.setImeOptions(IME_MASK_ACTION);
-        if(ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED){
-            //ask for permission
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-
         }else{//permission granted
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,10*1000, 20, locationListener);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,1*1000, 2, locationListener);
         }
         setUpPreferences();
         appDb = AppDatabase.getInstance(getApplicationContext());
@@ -150,7 +172,6 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
         btn_email_report.setOnClickListener(new View.OnClickListener() {
@@ -166,15 +187,17 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
                 boolean isConnected = activeNetwork != null &&
                         activeNetwork.isConnectedOrConnecting();
                 if(validEmail){
-                    Toast toast = Toast.makeText(context, "Please enter a valid email address in the preference screen.", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(context, R.string.toast_no_email_address, Toast.LENGTH_LONG);
                     toast.show();
                 }else if(!isConnected){
-                    Toast toast = Toast.makeText(context, "You need a network connection to send the summary email.", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(context, R.string.toast_no_network, Toast.LENGTH_LONG);
                     toast.show();
                 } else{
                     retrieveTasks();
                     SimpleDateFormat format = new SimpleDateFormat("EEE MMM dd");//ex Tuesday May 5, 2018
                     String SummaryDateString = format.format(new Date());
+                    //DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,DATE_FIELD);
+                    //String SummaryDateString = dateFormat.toString();
                     Log.d(ACTIVITY, "email button address "+emailAddress+" date "+SummaryDateString);
                     //appDb.taskDao().loadAllTasks();
                     Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
@@ -215,6 +238,7 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
 
                 }cursor.close();
                 SummaryService.startActionUpdateSum(getApplicationContext());
+                /*
                 try{
                     Log.d(ACTIVITY, "try onClick latLong "+latLong[0]+" "+latLong[1]);
                     //LocationClass locationClass = new LocationClass();
@@ -224,6 +248,7 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
                     locationString = "Unable to determine location.-onClick";
                     Log.d(ACTIVITY, "catch onClick");
                 }
+                */
                 Log.d(ACTIVITY, "room values "+dateString+" "+systemName+" "+systemSummary+" "+locationString);
                 final TaskEntryRm taskToAdd  = new TaskEntryRm(dateString,systemName, systemSummary, locationString, 0);
                 AppExecutors.getInstance().diskIO().execute(new Runnable() {
@@ -236,10 +261,22 @@ public class TaskListActivity extends AppCompatActivity implements SharedPrefere
                 retrieveTasks();
                 //tv_completed_tasks.setText(emailSummary);
                 Context context = getApplicationContext();
-                Toast toast = Toast.makeText(context, "Completed task saved.", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(context, R.string.task_saved, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
+    }
+
+    @Override
+    public void onAddressComplete(String address) {
+        locationString = address;
+        Log.d(ACTIVITY, "address update interface "+address+" "+locationString);
+        if(!locationUpdated){//let the user know the first time that they go to the activity that a non-null address has been retrieved from Google
+            locationUpdated = true;
+            Toast toast = Toast.makeText(getApplicationContext(), R.string.task_updated, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+
     }
     public class DownloadTask  extends AsyncTask<String, Void, String> {
         @Override
