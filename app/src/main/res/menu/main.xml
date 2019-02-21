@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/shared_pref"
-          app:showAsAction="ifRoom"
+          app:showAsAction="never"
           android:title="@string/preferences"/>
     <item android:id="@+id/menu_go_to_main"
-          app:showAsAction="ifRoom"
+          app:showAsAction="never"
           android:title="@string/go_to_main_menu"/>
 </menu>

@@ -44,7 +44,8 @@
             style="@style/TwoColumnResults"
             android:id="@+id/et_wattage"
             android:inputType="number"
-            android:hint="@string/power"/>
+            android:hint="@string/power"
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,12 +54,14 @@
         <TextView
             style="@style/TwoColumnResults"
             android:text="@string/distance_ft"
-            android:id="@+id/tv_distance"/>
+            android:id="@+id/tv_distance"
+            />
         <EditText
             style="@style/TwoColumnResults"
             android:id="@+id/et_distance"
             android:inputType="number"
-            android:hint="@string/distance"/>
+            android:hint="@string/distance"
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -73,6 +76,7 @@
             android:contentDescription="@string/enter_max_percent_drop"
             android:id="@+id/et_percent_drop"
             android:inputType="numberDecimal"
-            android:hint="@string/hint_percent_drop"/>
+            android:hint="@string/hint_percent_drop"
+            />
     </LinearLayout>
 </LinearLayout>

@@ -19,6 +19,10 @@
                 android:text="@string/distance"
                 android:id="@+id/tv_distance_uom"/>
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/eu_ac_accent_dark"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,6 +37,10 @@
                 android:text="@string/tbd"
                 android:id="@+id/tv_distance1"/>
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/eu_ac_accent_dark"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,6 +55,10 @@
                 android:text="@string/tbd"
                 android:id="@+id/tv_distance2"/>
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/eu_ac_accent_dark"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,6 +73,10 @@
                 android:text="@string/tbd"
                 android:id="@+id/tv_distance3"/>
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/eu_ac_accent_dark"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,6 +91,10 @@
                 android:text="@string/tbd"
                 android:id="@+id/tv_distance4"/>
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/eu_ac_accent_dark"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,6 +109,10 @@
                 android:text="@string/tbd"
                 android:id="@+id/tv_distance5"/>
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/eu_ac_accent_dark"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,5 +127,8 @@
                 android:text="@string/tbd"
                 android:id="@+id/tv_distance6"/>
         </LinearLayout>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/eu_ac_accent_dark"/>
 </LinearLayout>

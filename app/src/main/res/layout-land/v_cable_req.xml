@@ -72,7 +72,8 @@
         <EditText
             style="@style/TwoColumnResults"
             android:id="@+id/et_percent_drop"
-            android:inputType="number"
-            android:hint="@string/percent_drop"/>
+            android:inputType="numberDecimal"
+            android:hint="@string/hint_percent_drop"
+            />
     </LinearLayout>
 </LinearLayout>

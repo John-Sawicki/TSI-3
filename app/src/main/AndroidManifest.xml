@@ -31,7 +31,7 @@
         <activity android:name=".PagaActivity">
         </activity>
         <activity android:name=".PowerLoadsActivity"
-                  android:windowSoftInputMode="adjustResize">
+                  android:windowSoftInputMode="adjustPan">
 
         </activity>
         <activity android:name=".PowerCableActivity"

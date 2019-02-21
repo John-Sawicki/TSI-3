@@ -18,16 +18,16 @@
             android:hint="@string/speaker_output_in_w"
             android:inputType="number"
             android:id="@+id/et_speaker_output"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/place_autocomplete_button_padding"
-            android:layout_marginRight="@dimen/place_autocomplete_button_padding"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/calculate"
-            android:id="@+id/btn_calculate"/>
-    </LinearLayout>
 
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/place_autocomplete_button_padding"
+        android:layout_marginRight="@dimen/place_autocomplete_button_padding"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/calculate"
+        android:id="@+id/btn_calculate"/>
 
     <FrameLayout
         android:layout_width="match_parent"

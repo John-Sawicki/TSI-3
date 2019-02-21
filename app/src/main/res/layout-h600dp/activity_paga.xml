@@ -41,7 +41,7 @@
             layout="@layout/v_paga_circle"
             android:id="@+id/lo_top_right"
             android:layout_width="match_parent"
-            android:layout_height="240dp"/>
+            android:layout_height="280dp"/>
         <include
             layout="@layout/v_paga_db"
             android:id="@+id/lo_bottom_left"

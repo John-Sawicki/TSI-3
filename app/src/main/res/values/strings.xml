@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TSI</string>
+    <string name="app_name">Telecom Calculator</string>
     <string name="task_description">Task Description</string>
     <string name="email_report">Email Report</string>
     <string-array name="system_array">
@@ -30,8 +30,8 @@
         <item>Industrial Area: 6</item>
         <item>Industrial Area: 7</item>
     </string-array>
-    <string name="appwidget_text">TSI APP</string>
-    <string name="telecom_system_integration">Telecom System Integration (TSI)</string>
+    <string name="appwidget_text">Telecommunications Calculator</string>
+    <string name="telecom_system_integration">Telecommunications Calculator</string>
     <string name="system_selection">System Selection</string>
     <string name="task_list">Task List</string>
     <string name="task_tracker_by_system">Task Tracker by System</string>
@@ -59,7 +59,7 @@
     <string name="distance_m">Distance (m)</string>
     <string name="tbd">TBD</string>
     <string name="speaker_power_w">Speaker Power (W)</string>
-    <string name="speaker_output_in_w">Speaker Output in W</string>
+    <string name="speaker_output_in_w">Power (W)</string>
     <string name="description">Description</string>
     <string name="qty">Qty.</string>
     <string name="watts">Watts</string>
