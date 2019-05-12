@@ -1,4 +1,4 @@
-package com.example.android.tsi;
+package com.john.android.tsi;
 
 import android.os.Handler;
 import android.os.Looper;

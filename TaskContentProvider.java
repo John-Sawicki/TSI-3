@@ -1,4 +1,4 @@
-package com.example.android.tsi.Sqlite;
+package com.john.android.tsi.Sqlite;
 
 import android.content.ContentProvider;
 import android.content.ContentUris;
@@ -13,7 +13,7 @@ import android.os.CancellationSignal;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.example.android.tsi.Sqlite.TaskContract.TaskEntry;
+import com.john.android.tsi.Sqlite.TaskContract.TaskEntry;
 public class TaskContentProvider extends ContentProvider {
     private TaskDbHelper mTaskDbHelper;
     public static final int TASKS =100;

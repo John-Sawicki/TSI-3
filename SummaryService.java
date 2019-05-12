@@ -1,4 +1,4 @@
-package com.example.android.tsi.Widget;
+package com.john.android.tsi.Widget;
 
 import android.app.IntentService;
 import android.appwidget.AppWidgetManager;
@@ -10,8 +10,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.example.android.tsi.SqliteSum.SumDbHelper;
-import com.example.android.tsi.SqliteSum.SumTaskContract.SummaryEntry;
+import com.john.android.tsi.SqliteSum.SumDbHelper;
+import com.john.android.tsi.SqliteSum.SumTaskContract.SummaryEntry;
 public class SummaryService extends IntentService{
     private SQLiteDatabase mDb;
     private String sumTitle = "System Name";

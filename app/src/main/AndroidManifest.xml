@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="com.example.android.tsi">
+          package="com.john.android.tsi">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE " />
@@ -14,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_tsi_rd"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+
         tools:ignore="GoogleAppIndexingWarning">
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -21,28 +22,28 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBNJnhr6YYlvan5jK2Zs3sAGjrh6Y6o2iU"/>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.john.android.tsi.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".PagaActivity">
+        <activity android:name="com.john.android.tsi.PagaActivity">
         </activity>
-        <activity android:name=".PowerLoadsActivity"
+        <activity android:name="com.john.android.tsi.PowerLoadsActivity"
                   android:windowSoftInputMode="adjustPan">
 
         </activity>
-        <activity android:name=".PowerCableActivity"
+        <activity android:name="com.john.android.tsi.PowerCableActivity"
                   android:windowSoftInputMode="adjustPan">
         </activity>
-        <activity android:name=".TaskListActivity">
+        <activity android:name="com.john.android.tsi.TaskListActivity">
 
         </activity>
-        <activity android:name=".SettingsActivity"/>
+        <activity android:name="com.john.android.tsi.SettingsActivity"/>
 
-        <receiver android:name=".Widget.SummaryWidget">
+        <receiver android:name="com.john.android.tsi.Widget.SummaryWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -51,7 +52,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/summary_widget_info"/>
         </receiver>
-        <service android:name=".Widget.SummaryService"/>
+        <service android:name="com.john.android.tsi.Widget.SummaryService"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.android.tsi.Room;
+package com.john.android.tsi.Room;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;

@@ -1,4 +1,4 @@
-package com.example.android.tsi.Widget;
+package com.john.android.tsi.Widget;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -6,7 +6,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-import com.example.android.tsi.R;
+import com.john.android.tsi.R;
 
 /**
  * Implementation of App Widget functionality.

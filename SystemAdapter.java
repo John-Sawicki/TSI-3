@@ -1,4 +1,4 @@
-package com.example.android.tsi.utilities;
+package com.john.android.tsi.utilities;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.android.tsi.R;
+import com.john.android.tsi.R;
 
 public class SystemAdapter extends RecyclerView.Adapter<SystemAdapter.SystemAdapterVH> {
     private String[][] mSystemNamed2D={{"PAGA Sound Coverage", "Wire Gauge Calculator", "Power Load Calculator", "Task Tracker"},

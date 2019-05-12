@@ -1,4 +1,4 @@
-package com.example.android.tsi;
+package com.john.android.tsi;
 
 import org.junit.Test;
 

@@ -1,10 +1,10 @@
-package com.example.android.tsi.SqliteSum;
+package com.john.android.tsi.SqliteSum;
 
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.example.android.tsi.SqliteSum.SumTaskContract.SummaryEntry;
+import com.john.android.tsi.SqliteSum.SumTaskContract.SummaryEntry;
 public class SumDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME="summary.db";
     private static final int DATABASE_VERSION= 1;

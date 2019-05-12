@@ -1,4 +1,4 @@
-package com.example.android.tsi;
+package com.john.android.tsi;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,8 +11,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.android.tsi.utilities.ApiKey;
-import com.example.android.tsi.utilities.SystemAdapter;
+import com.john.android.tsi.utilities.ApiKey;
+import com.john.android.tsi.utilities.SystemAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,7 +22,7 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
-import static com.example.android.tsi.utilities.ApiKey.bannerAdKey;
+import static com.john.android.tsi.utilities.ApiKey.bannerAdKey;
 
 public class MainActivity extends AppCompatActivity implements SystemAdapter.SystemOnClickInterface, SharedPreferences.OnSharedPreferenceChangeListener {
     @BindView(R.id.rv_system_name)RecyclerView mRecyclerView;

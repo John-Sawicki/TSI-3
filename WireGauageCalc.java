@@ -1,4 +1,4 @@
-package com.example.android.tsi.utilities;
+package com.john.android.tsi.utilities;
 
 import android.util.Log;
 

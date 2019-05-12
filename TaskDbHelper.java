@@ -1,9 +1,9 @@
-package com.example.android.tsi.Sqlite;
+package com.john.android.tsi.Sqlite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.example.android.tsi.Sqlite.TaskContract.TaskEntry;
+import com.john.android.tsi.Sqlite.TaskContract.TaskEntry;
 public class TaskDbHelper  extends SQLiteOpenHelper{
     private static final String DATABASE_NAME = "tasks.db";
     private static final int DATABASE_VERSION = 1;

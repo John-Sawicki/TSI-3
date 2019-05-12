@@ -1,4 +1,4 @@
-package com.example.android.tsi.Room;
+package com.john.android.tsi.Room;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;

@@ -1,4 +1,4 @@
-package com.example.android.tsi.SqliteSum;
+package com.john.android.tsi.SqliteSum;
 
 import android.net.Uri;
 import android.provider.BaseColumns;

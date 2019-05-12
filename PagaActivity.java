@@ -1,4 +1,4 @@
-package com.example.android.tsi;
+package com.john.android.tsi;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -21,9 +21,9 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.android.tsi.SqliteSum.SumDbHelper;
-import com.example.android.tsi.SqliteSum.SumTaskContract;
-import com.example.android.tsi.Widget.SummaryService;
+import com.john.android.tsi.SqliteSum.SumDbHelper;
+import com.john.android.tsi.SqliteSum.SumTaskContract;
+import com.john.android.tsi.Widget.SummaryService;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;

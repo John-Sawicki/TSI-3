@@ -1,4 +1,4 @@
-package com.example.android.tsi;
+package com.john.android.tsi;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -22,10 +22,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.tsi.SqliteSum.SumDbHelper;
-import com.example.android.tsi.SqliteSum.SumTaskContract;
-import com.example.android.tsi.Widget.SummaryService;
-import com.example.android.tsi.utilities.WireGauageCalc;
+import com.john.android.tsi.SqliteSum.SumDbHelper;
+import com.john.android.tsi.SqliteSum.SumTaskContract;
+import com.john.android.tsi.Widget.SummaryService;
+import com.john.android.tsi.utilities.WireGauageCalc;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
